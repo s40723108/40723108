@@ -49,7 +49,6 @@
 <h1>期末作業</h1>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/6UnosNEeQ0s" width="560"></iframe></p>
 <h1>國旗</h1>
-<p></p>
 <!-- for Brython -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -68,7 +67,7 @@ brython(1);
 # 導入 doc
 from browser import document as doc
 import math
-   
+  
 # 準備繪圖畫布
 canvas = doc["taiwan_flag"]
 ctx = canvas.getContext("2d")
@@ -90,14 +89,14 @@ ctx.beginPath()
 star_radius = flag_w/8
 angle = 0
 for i in range(24):
-    angle += 5*math.pi*2/12
-    toX = circle_x + math.cos(angle)*star_radius
-    toY = circle_y + math.sin(angle)*star_radius
-    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
-    if (i):
-        ctx.lineTo(toX, toY)
-    else:
-        ctx.moveTo(toX, toY)
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
 ctx.closePath()
 # 將填色設為白色
 ctx.fillStyle = '#fff'
